@@ -5,7 +5,10 @@ import Link from 'next/link';
 import { useTodos } from '../hooks/useTodos';
 
 export const Todos = () => {
-  const { todos } = useTodos();
+  const { todos , loading, error } = useTodos();
+
+  if (loading) return <p>読み込み中...</p>;
+  if (error) return <p>エラー: {error.message}</p>;
 
   return (
     <div>

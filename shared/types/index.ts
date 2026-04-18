@@ -1,4 +1,4 @@
-export type Todo_id = string;
+export type TodoId = string;
 
 export type Todo = {
   id: number;
@@ -11,6 +11,22 @@ export type Todo = {
 export type Todos = {
   id: number;
   title: string;
+  completed: boolean;
+};
+
+export type ActionState = {
+  error?: string;
+};
+
+export type CreateTodoParams = {
+  title: string;
+  description: string;
+};
+
+export type UpdateTodoParams = {
+  id: number;
+  title: string;
+  description: string;
   completed: boolean;
 };
 

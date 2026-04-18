@@ -1,25 +1,29 @@
 'use client';
 
 import type { FC } from 'react';
+import Link from 'next/link';
 import { useTodo } from '../hooks/useTodo';
-import { Todo_id } from '../types';
+import { TodoId } from '../types';
 
 interface TodoProps {
-  todoId: Todo_id;
+  todoId: TodoId;
 }
 
 // appからparameterを受け取る
 export const Todo: FC<TodoProps> = ({ todoId }) => {
-  const { todo } = useTodo(todoId);
+  const { todo, loading, error } = useTodo(todoId);
 
-  if (!todo) return <div>Loading...</div>;
+  if (loading) return <p>読み込み中...</p>;
+  if (error) return <p>エラー: {error.message}</p>;
+  if (!todo) return <p>データがありません</p>;
 
   return (
     <div>
+      <Link href='/todos'>← Back to list</Link>
       <p>タイトル：{todo.title}</p>
       <p>説明：{todo.description}</p>
       <p>完了：{todo.completed ? 'Yes' : 'No'}</p>
       <p>作成日：{new Date(todo.createdAt).toLocaleDateString()}</p>
     </div>
   );
-}
+};

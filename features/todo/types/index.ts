@@ -1,1 +1,1 @@
-export { type Todo_id, type Todo, type TodoResponse } from '@/shared/types';
+export type { TodoId, Todo, TodoResponse } from '@/shared/types';
