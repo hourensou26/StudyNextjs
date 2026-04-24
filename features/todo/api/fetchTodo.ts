@@ -1,13 +1,5 @@
-import { TodoResponse, TodoId } from '../types';
+import { getTodo } from "@/shared/api/getTodo";
 
-//responseのdataに一覧があるため、data.data
-export const fetchTodo = async (todo_id: TodoId) => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/todos/${todo_id}`);
-  if (!res.ok) {
-    throw new Error(`Failed : ${res.status}`);
-  }
-
-  const data: { data: TodoResponse } = await res.json();
-
-  return data.data;
+export const fetchTodo = async (todo_id: string) => {
+  return await getTodo(todo_id);
 };

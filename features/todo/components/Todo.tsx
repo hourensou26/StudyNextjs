@@ -19,11 +19,16 @@ export const Todo: FC<TodoProps> = ({ todoId }) => {
 
   return (
     <div>
-      <Link href='/todos'>← Back to list</Link>
-      <p>タイトル：{todo.title}</p>
-      <p>説明：{todo.description}</p>
-      <p>完了：{todo.completed ? 'Yes' : 'No'}</p>
-      <p>作成日：{new Date(todo.createdAt).toLocaleDateString()}</p>
+      <div>
+        <Link href='/todos'>← Back to list</Link>
+        <p>タイトル：{todo.title}</p>
+        <p>説明：{todo.description}</p>
+        <p>完了：{todo.completed ? 'Yes' : 'No'}</p>
+        <p>作成日：{new Date(todo.createdAt).toLocaleDateString()}</p>
+      </div>
+      <div>
+      <Link href={`/todos/${todoId}/update`}>Edit</Link>
+      </div>
     </div>
   );
 };
