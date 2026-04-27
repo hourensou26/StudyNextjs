@@ -13,6 +13,7 @@ export const Todos = () => {
   return (
     <div>
       <h1>Todo List</h1>
+      <Link href='/todos/create'>Create New Todo</Link>
       <ul>
         {todos.map(todo => (
           <li key={todo.id}>

@@ -28,6 +28,8 @@ export const Todo: FC<TodoProps> = ({ todoId }) => {
       </div>
       <div>
       <Link href={`/todos/${todoId}/update`}>Edit</Link>
+      <Link href={`/todos/${todoId}/delete`}>Delete</Link>
+      
       </div>
     </div>
   );

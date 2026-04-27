@@ -1,0 +1,22 @@
+{
+  "editor.fontFamily": "Fira Code, Consolas, 'Courier New', monospace",
+  "editor.fontSize": 13,
+  "editor.fontLigatures": true,
+
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+  "editor.formatOnSave": true,
+
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "editor.tabSize": 2,
+
+  "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+
+  "vscode_custom_css.imports": [
+    // MacのホームディレクトリにCSSファイルを保存した場合※
+    "file:///C:/Users/adgjm/Desktop/pygame/.vscode/synthwave84.css"
+  ],
+  "vscode_custom_css.policy": true
+}
